@@ -3,33 +3,40 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:Shop"
              x:Class="Shop.MainPage">
+    <ContentPage.Resources>
+
+        <ResourceDictionary>
+            <local:LabelClickConverter x:Key="LabelClick"/>
+        </ResourceDictionary>
+
+    </ContentPage.Resources>
     <StackLayout Orientation="Vertical">
         <StackLayout  Orientation="Horizontal" BackgroundColor="#443E43" HeightRequest="70">
             <ScrollView Orientation="Horizontal">
                 <StackLayout  Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center" >
 
-                    <Label x:Name="Travel" Text="Travel" TextColor="Gray" VerticalOptions="Center" FontSize="18" Margin="10,0,10,0">
+                    <Label x:Name="Travel" Text="Travel" TextColor="{Binding Tab1Visible, Converter={StaticResource LabelClick}}" VerticalOptions="Center" FontSize="18" Margin="10,0,10,0">
                         <Label.GestureRecognizers>
                             <TapGestureRecognizer
                                 Tapped="TapGestureRecognizer_OnTapped"
                             />
                         </Label.GestureRecognizers>
                     </Label>
-                    <Label x:Name="Shoes" Text="Shoes" TextColor="Gray" VerticalOptions="Center" FontSize="18" Margin="10,0,10,0">
+                    <Label x:Name="Shoes" Text="Shoes" TextColor="{Binding Tab2Visible, Converter={StaticResource LabelClick}}" VerticalOptions="Center" FontSize="18" Margin="10,0,10,0">
                         <Label.GestureRecognizers>
                             <TapGestureRecognizer
                                 Tapped="TapGestureRecognizer_OnTapped"
                             />
                         </Label.GestureRecognizers>
                     </Label>
-                    <Label x:Name="Bags" Text="Bags" TextColor="Gray" VerticalOptions="Center" FontSize="18" Margin="10,0,10,0">
+                    <Label x:Name="Bags" Text="Bags" TextColor="{Binding Tab3Visible, Converter={StaticResource LabelClick}}"  VerticalOptions="Center" FontSize="18" Margin="10,0,10,0">
                         <Label.GestureRecognizers>
                             <TapGestureRecognizer
                                 Tapped="TapGestureRecognizer_OnTapped"
                             />
                         </Label.GestureRecognizers>
                     </Label>
-                    <Label x:Name="Accessoreis" Text="Accessoreis" TextColor="Gray" VerticalOptions="Center" FontSize="18" Margin="10,0,10,0">
+                    <Label x:Name="Accessoreis" Text="Accessoreis" TextColor="{Binding Tab4Visible, Converter={StaticResource LabelClick}}" VerticalOptions="Center" FontSize="18" Margin="10,0,10,0">
                         <Label.GestureRecognizers>
                             <TapGestureRecognizer
                                 Tapped="TapGestureRecognizer_OnTapped"
